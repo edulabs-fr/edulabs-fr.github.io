@@ -197,7 +197,7 @@ rm -f /srv/depts/marketing/share/test
 
 **Symptômes :**
 
-# état du répertoire
+Afficher l'état du répertoire pour avoir une idée sur le problème.
 
 ```bash
 `ls -ld /srv/depts/marketing/share`
