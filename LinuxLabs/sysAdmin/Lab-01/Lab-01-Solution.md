@@ -279,6 +279,7 @@ chown root:root  /etc/passwd;  chmod 644 /etc/passwd
 ls -l /etc/shadow
 sudo -u camel.chalal passwd
 ```
+---
 
 ### Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal »
 
