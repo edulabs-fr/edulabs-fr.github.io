@@ -16,60 +16,86 @@ Cette page contient les corrections détaillées des tickets et incidents du Spr
 ### Ticket T1 — Création de l’utilisateur `alice.dupont`
 
 **Objectif**  
-Créer `alice.dupont`, shell `/bin/bash`, **groupe primaire** `marketing`, mot de passe à changer au 1er login.
+- Créer `alice.dupont`
+- lui attribuer le shell `/bin/bash`
+- L'ajouter au **groupe primaire** `marketing`
+- La forcer à changer son mot de passe au 1er login.
 
 ```bash
 #Créer l'utilisateur alice.dupont, lui attribuer le shell bash, et l'ajouter au groupe marketing comme groupe primare
 useradd -m -c "Alice Dupont" -s /bin/bash -g marketing alice.dupont
 
-#Définit un nouveau mot de passe
+#Définir un nouveau mot de passe temporaire
 echo "alice.dupont:MotDePasse123!" | chpasswd
 
-#Forcer Alice a changer son mot de passe au prochain login
-passwd -e alice.dupont          # (équivalent: chage -d 0 alice.dupont)
+#Forcer Alice a changer son mot de passe au prochain login (équivalent: chage -d 0 alice.dupont)
+passwd -e alice.dupont          
 ```
 
 **Vérification :**
 ```bash
-id alice.dupont                 # groupe primaire = marketing
+# Le groupe primaire = marketing
+id alice.dupont   
+
+#Vérifier que Alice à bien /bin/bash comme shell
 getent passwd alice.dupont | grep ':/bin/bash$'
-test -d /home/alice.dupont
-chage -l alice.dupont           # doit indiquer "Password must be changed"```
+
+# Vérifier que Alice possède bien son /home
+ls -l /home/ 
+
+# Doit indiquer "Password must be changed"
+chage -l alice.dupont           
 ```
 
 ---
 
-### ✅ Ticket T2 — Ajout d’un utilisateur secondaire
+### Ticket T2 — Ajout d’un utilisateur secondaire
 
 **Objectif**  
 
-S’assurer que le groupe ```com``` existe et qu’Alice en est membre *secondaire*.
+- Vérifier si le groupe `com` est présent.
+- Créer le groupe `com`
+- Ajouter `alice.dupont` au groupe `com`, ce groupe doit être son groupe *secondaire*
 
 ```bash
+#Vérifier si le groupe com est existant
+getent group com
+
+#Créer le groupe com
 groupadd -f com
+
+#Ajouter alice.dupont au groupe com (en tant que groupe secondaire)
 usermod -aG com alice.dupont
 ```
 
 **Vérification :**
 ```bash
-getent group com
+#Vérifier que alice.dupont est dans le groupe com, et que ce groupe est son groupe secondaire
 id -nG alice.dupont | grep com
 ```
 
 ---
 
-### ✅ Ticket T3 — Droits sur `/srv/depts/marketing/share`
+### Ticket T3 — Droits sur `/srv/depts/marketing/share`
 
 **Objectif**  
 
-Attribuer au groupe Marketing les permissions de lecture, écriture et exécution sur le répertoire `/srv/depts/marketing/share`
-, avec validation de la procédure (test)
+- Attribuer au groupe Marketing les permissions de lecture, écriture et exécution sur le répertoire `/srv/depts/marketing/share`, avec validation de la procédure (test)
 
 En d'autres termes : Activer le setgid et droits d’équipe sur /srv/depts/marketing/share, avec héritage du groupe.
 
 ```bash
+#Vérifier les permissions et droits actuelles, le groupe share est en lecture uniquement
+ls -ld /srv/depts/marketing/share
+
+#Tester l'écriture avec un utilisateur faisant partie du groupe marketing
+sudo -u alice.dupont touch /srv/depts/marketing/share/testfile
+
+# Changer les propriétaire du répertoire share 
 chown root:marketing /srv/depts/marketing/share
-chmod 2770 /srv/depts/marketing/share      # 2 = setgid
+
+# Activer le setgid et modifier les droits d'équipe marketing
+chmod 2770 /srv/depts/marketing/share
 ```
 
 **Vérification :**
@@ -88,20 +114,20 @@ ls -ld /srv/depts/marketing/share
 
 ---
 
-### ✅ Ticket T4 — Groupe projet `siteweb`
+### Ticket T4 — Groupe projet `siteweb`
 
 **Objectif**  
 
 1. Mise à jour du squelette `/etc/skel` :
-- ajout d'un dossier `Documents`
-- ajout d'un alias `ll='ls -alF'`
+    - ajout d'un dossier `Documents`
+    - ajout d'un alias `ll='ls -alF'`
 2. Création d'un utilisateur martin.bob avec comme groupe primaire `dev`
 3. Validation du bon fonctionnement de la procédure
 
 ```bash
 # Squelette standard
 install -d -m 0755 /etc/skel/Documents
-echo "alias ll='ls -alF'" >> /etc/skel/.bash_aliases
+echo "alias ll='ls -alF'" >> /etc/skel/.bashrc
 
 # Créer Bob (après maj du skel)
 useradd -m -d /home/bob.martin -s /bin/bash -g dev bob.martin
@@ -110,8 +136,13 @@ echo "bob.martin:Password123!" | chpasswd
 
 **Vérification :**
 ```bash
-id -nG bob.martin #Groupe primaire = dev
+#Groupe primaire doit être dev
+id -nG bob.martin 
+
+#Vérifier que le répertoire Documents est bien présent dans le home de bob.martin
 ls -l /home/bob.martin | grep Documents
+
+#
 cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 ```
 

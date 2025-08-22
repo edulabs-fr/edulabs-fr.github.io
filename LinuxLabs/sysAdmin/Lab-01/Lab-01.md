@@ -84,8 +84,8 @@ Astuces : ```useradd``` ```usermod``` ```passwd``` ```chage```
 
 ### Ticket 2 - Groupe transverse com
 
-1. Vérifier ou créer le groupe com.
-2. Ajouter alice.dupont en groupe secondaire com.
+1. Vérifier ou créer le groupe `com`.
+2. Ajouter alice.dupont au groupe `com`, ce groupe doit être son groupe secondiare.
 
 Astuces : ```groupadd``` ```usermod```
 
