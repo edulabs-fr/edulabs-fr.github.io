@@ -13,7 +13,8 @@ Notre objectif : permettre aux apprenants quelque soit leur niveau de **découvr
 Blue label
 {: .label .label-blue }
 
-## Notre vision
+## Notre vision BlaBla
+{: .label .label-blue }
 Edulabs n’est pas seulement une plateforme d'apprentissage classique :
 
 C’est un **espace stimulant** où l’apprentissage se veut :  
