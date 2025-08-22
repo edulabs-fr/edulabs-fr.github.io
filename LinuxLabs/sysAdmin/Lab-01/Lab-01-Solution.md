@@ -1,5 +1,5 @@
 ---
-title: Lab-01
+title: Lab-01-Solution
 parent: sysAdmin
 grand_parent: LinuxLabs
 nav_order: 2
