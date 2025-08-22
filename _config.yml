@@ -18,7 +18,7 @@ heading_anchors: true
 
 aux_links:
   "Edulabs sur GitHub":
-    - "https://github.com/edulabs-fr/edulabs-fr.github.io"
+    - ""
 
 gh_edit_link: true
 gh_edit_link_text: "Modifier cette page sur GitHub"
