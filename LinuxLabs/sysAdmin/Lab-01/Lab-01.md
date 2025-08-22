@@ -136,8 +136,6 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 
 ### <span style="color:red">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span>
 
-{: .highlight }
-Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »
 
 **Contexte** : - Alice (groupe `marketing`) essaye de créer un fichier dans `/srv/depts/marketing/share` mais obtient « *Permission denied* ».
 
@@ -146,7 +144,7 @@ Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alic
 - Le fichier appartient bien au **groupe** `marketing`.
 - Les permissions finales du dossier sont `rwxrws---` (`2770`, owner `root:marketing`).
 
-### INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont »
+### <span style="color:red"> INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont » </span>
 
 **Contexte** : 
 
@@ -163,7 +161,7 @@ Or, selon la politique interne, chaque membre du groupe `marketing` doit pouvoir
 **Attendu** : Seuls les propriétaires peuvent supprimer leur propres fichiers (le root aussi, et ce n'est pas un piège).
 
 
-### INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal »
+### <span style="color:red"> INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal » </span>
 
 **Contexte** : 
 
@@ -177,7 +175,7 @@ passwd `camel.chalal` fonctionne normalement, l'utilisateur pourra donc modifier
 
 ⚠️ Attention : tant que l’incident est actif, tous les passwd échouent.
 
-### INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal »
+### <span style="color:red"> INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal » </span>
 
 **Contexte** : 
 

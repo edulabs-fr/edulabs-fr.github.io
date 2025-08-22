@@ -151,7 +151,7 @@ cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 
 ## Incidents - Troubleshooting
 
-### Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »
+### <span style="color:red">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span>
 
 **Ticket de alice.dupont :**
 - « Je suis dans le groupe `marketing` mais je ne peux pas écrire »
@@ -186,7 +186,7 @@ rm -f /srv/depts/marketing/share/test
 
 ---
 
-### Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont »
+### <span style="color:red"> INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont » </span>
 
 
 Dans le répertoire `/srv/depts/marketing/share`, Alice a supprimer le fichier de bob sans faire attention. Heuresement Bob possédait le fichier dans son drive, cependant, ce genre
@@ -249,7 +249,7 @@ ls -ld /srv/depts/marketing/share`
 
 ---
 
-### Incident INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal »
+### <span style="color:red"> INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal » </span>
 
 **Symptômes :**
 - Suite à une manipulation hasardeuse de ma part `camel.chalal` je n'arrive plus à changer mon mot de passe, j'ai une erreur `passwd: Authentication token manipulation error`.
@@ -281,7 +281,7 @@ sudo -u camel.chalal passwd
 ```
 ---
 
-### Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal »
+### <span style="color:red"> INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal » </span>
 
 **Symptômes :**
 Votre collaborateur camel.chalal n'arrive pas à se connecter avec sa clé privé, le serveur semble ignorer l'authentification par clé et bascule en authentification par mot de passe.
