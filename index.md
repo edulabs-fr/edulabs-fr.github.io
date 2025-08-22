@@ -10,11 +10,7 @@ Je m'appelle **Lotfi Hamadene** et je suis le fondateur de **Edulabs**, une plat
 
 Notre objectif : permettre aux apprenants quelque soit leur niveau de **découvrir, comprendre et pratiquer** les technologies dans un contexte réaliste et immersif.  
 
-Blue label
-{: .label .label-blue }
-
-## Notre vision BlaBla
-{: .label .label-blue }
+## Notre vision 
 Edulabs n’est pas seulement une plateforme d'apprentissage classique :
 
 C’est un **espace stimulant** où l’apprentissage se veut :  
