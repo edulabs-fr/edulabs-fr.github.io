@@ -17,13 +17,11 @@ nav_order: 1
 
 ---
 
-## ⚙️ Lancement (ISO ou Docker)
-
-> *Cette section est indicative ; adaptez les URLs/tags à votre image publique.*
+## ⚙️ Lancement (VM ou Conteneur)
 
 ### Option A — Image prête à l’emploi (VM)
 
-1. Téléchargez l’image préconfigurée mise à disposition (Proxmox, VirtualBox, VMware Workstation, Hyper-V).
+1. Téléchargez l’image préconfigurée mise à disposition (Incus,Proxmox, VirtualBox, VMware Workstation, Hyper-V).
 2. Importez l’image dans votre hyperviseur et démarrez la machine virtuelle.
 3. Connectez-vous avec l’utilisateur root pour commencer.
 
