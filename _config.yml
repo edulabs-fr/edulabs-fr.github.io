@@ -17,7 +17,7 @@ title: Edulabs
 description: Documentation et plus
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://edulabs-fr.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-repository: edulabs-fr/edulabs # for github-metadata
+repository: edulabs-fr/edulabs # for github-metadatas
 
 permalink: pretty
 
