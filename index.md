@@ -8,8 +8,10 @@ nav_order: 1
 
 Je m'appelle **Lotfi Hamadene** et je suis le fondateur de **Edulabs**, une plateforme francophone où le **partage** est au cœur de tout.  
 
-Notre objectif : permettre aux apprenants de **découvrir, comprendre et pratiquer** les technologies dans un contexte réaliste et immersif.  
- 
+Notre objectif : permettre aux apprenants quelque soit leur niveau de **découvrir, comprendre et pratiquer** les technologies dans un contexte réaliste et immersif.  
+
+Blue label
+{: .label .label-blue }
 
 ## Notre vision
 Edulabs n’est pas seulement une plateforme d'apprentissage classique :
@@ -21,7 +23,7 @@ C’est un **espace stimulant** où l’apprentissage se veut :
 
 ## Ce que vous trouverez
 - Des **labs pratiques** autour de Linux, Azure, Kubernetes, Podman, Incus et d’autres technologies Cloud & DevOps.  
-- Des **astuces et tips** pour mieux exploiter vos environnements de développement et vos outils quotidiens.  
+- Des **astuces** pour mieux exploiter vos environnements de travail et vos outils quotidiens.  
 - Des **parcours pédagogiques** qui vous accompagnent pas à pas dans votre montée en compétences orientée pratique.  
 
 
@@ -30,11 +32,12 @@ C’est un **espace stimulant** où l’apprentissage se veut :
 Lors de mon propre parcours en informatique, j’ai été confronté à une réalité frustrante, aussi bien en école qu’en autodidacte sur des plateformes reconnues.  
 
 Les labs proposés étaient souvent :  
-- **Trop simplistes** : par exemple, déployer un serveur DHCP ou DNS. Ce sont des notions utiles à comprendre certes, mais ce n’est pas ce que fait un administrateur système au quotidien. Ce genre d’exercices manque de profondeur et n’aide pas vraiment à saisir les mécanismes réels "sous le capot".  
-- **Guidés pas à pas** : pratiques pour mémoriser des commandes, mais sans véritable apprentissage de la logique et sans autonomie réelle.  
+- **Trop simplistes** : par exemple, déployer un serveur DHCP ou DNS..., OK ce sont des notions utiles à comprendre certes, mais ce n’est pas ce que fait de vous un administrateur système au quotidien. 
+Ce genre d’exercices manque de profondeur et n’aide pas vraiment à saisir les défis réels face aux technos "Regarder sous le capot".  
+- **Guidés pas à pas** : pratiques pour mémoriser des commandes et s'initier, mais sans autonomie réelle.  
 - **Scénarisés mais irréalistes** : certaines plateformes anglophones proposent des scénarios, mais ils sont souvent pauvre en contenu ou pas trop réaliste. Ils ne reflètent pas certaines problématiques qu’un administrateur système ou un technicien rencontre sur le terrain.  
 
-J’ai aussi remarqué que beaucoup de stagiaires et d’apprenants francophones (des professionnels aussi) que j’ai rencontrés étaient freinés par la *barrière de la langue anglaise*. Bien que je conseille toujours de se former en anglais au moins technique, cela reste une charge supplémentaire pour beaucoup, et peut ralentir la progression.  
+J’ai aussi remarqué que beaucoup de stagiaires et d’apprenants francophones (des professionnels aussi) que j’ai rencontrés étaient freinés par la *barrière de la langue anglaise*. Bien que je conseille toujours de se former en anglais au moins technique, cela reste une charge cognitive supplémentaire pour beaucoup, et peut ralentir la progression *(Attention ! Les machines des labs sont exclusivement en anglais, le support est en français)*
 
 C’est de là qu’est née l’idée d’**Edulabs** :  
 - Une plateforme **francophone**,  

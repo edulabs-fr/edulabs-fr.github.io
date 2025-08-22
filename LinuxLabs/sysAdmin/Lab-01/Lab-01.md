@@ -21,10 +21,14 @@ nav_order: 1
 
 > *Cette section est indicative ; adaptez les URLs/tags à votre image publique.*
 
-### Option A — ISO (VM)
-1. Créez une VM (2 vCPU, 2 Go RAM, 15 Go disque).
-2. Démarrez sur l’ISO préparée, terminez l’installation.
-3. Connectez-vous en root (ou via `sudo`).
+### Option A — Image prête à l’emploi (VM)
+
+1. Téléchargez l’image préconfigurée mise à disposition (Proxmox, VirtualBox, VMware Workstation, Hyper-V).
+2. Importez l’image dans votre hyperviseur et démarrez la machine virtuelle.
+3. Connectez-vous avec l’utilisateur root pour commencer.
+
+`nom d'utilisateur : root`
+`mot de passe : root`
 
 ### Option B — Docker (image tout-en-un)
 ```bash
@@ -36,9 +40,7 @@ docker run -it --name lab-linux \
 ```
 
 ### Option C (Privé) — Cloud/Proxmox (VM) :
-Loremipsum Loremipsum Loremipsum Loremipsum
-Loremipsum Loremipsum Loremipsum Loremipsum
-Loremipsum Loremipsum Loremipsum Loremipsum
+Si vous souhaitez accéder aux labs directement depuis votre navigateur (pour une duée d'environ 1h), sans avoir à rien déployer, vous pouvez en faire la demande à l’adresse suivante : edulabs.svc@gmail.com
 
 ---
 ## 🧪 Scénario du Lab

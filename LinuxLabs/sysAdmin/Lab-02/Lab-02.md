@@ -17,15 +17,21 @@ nav_order: 1
 
 > *Cette section est indicative ; adaptez les URLs/tags à votre image publique.*
 
-### Option A — ISO (VM)
-1. Créez une VM (2 vCPU, 2 Go RAM, 15 Go disque).
-2. Démarrez sur l’ISO préparée, terminez l’installation.
-3. Connectez-vous en root (ou via `sudo`).
+### Option A — Image prête à l’emploi (VM)
+
+- Téléchargez l’image préconfigurée mise à disposition (Proxmox, VirtualBox, VMware Workstation, Hyper-V).
+- Importez l’image dans votre hyperviseur et démarrez la machine virtuelle.
+- Connectez-vous avec l’utilisateur root pour commencer.
+
+```bash
+nom d'utilisateur : root
+mot de passe : root
+```
 
 ### Option B — Docker (image tout-en-un)
 ```bash
 docker run -it --name lab-linux \
-  --hostname Lab-scen1 \
+  --hostname Lab-scen2 \
   --privileged \
   -v lab_data:/srv \
   ghcr.io/<votre-org>/<votre-image>:<tag>
