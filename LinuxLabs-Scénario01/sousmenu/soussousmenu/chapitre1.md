@@ -1,6 +1,6 @@
 ---
 title: Chapitre 1
-parent: Guide
+parent: Introduction
 grand_parent: Documentation
 nav_order: 1
 ---
