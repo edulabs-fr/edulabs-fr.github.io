@@ -4,6 +4,6 @@ nav_order: 2
 has_children: true
 ---
 
-# Documentation
+# LinuxLabs - 
 
-Bienvenue dans la section documentation.
+Bienvenue dans la section LinuxLabs.
