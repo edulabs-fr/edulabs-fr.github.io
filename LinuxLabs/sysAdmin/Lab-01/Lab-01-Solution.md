@@ -169,9 +169,6 @@ On à bien un problème de permission :
 On vérifie les droits :
 `stat -c '%a %U:%G' /srv/depts/marketing/share`
 
-**PostMortem explication :**
-A finir
-
 **Correctif :**
 
 ```bash
