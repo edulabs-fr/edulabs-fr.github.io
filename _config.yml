@@ -1,6 +1,6 @@
 title: "Edulabs"
 description: "Documentation et plus"
-baseurl: "" 
+baseurl: "https://dev.edulabs.fr/" 
 url: "https://edulabs-fr.github.io"
 
 permalink: pretty
