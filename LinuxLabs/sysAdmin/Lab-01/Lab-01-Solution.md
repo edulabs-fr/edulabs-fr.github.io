@@ -191,9 +191,10 @@ rm -f /srv/depts/marketing/share/test
 
 ### Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont »
 
-  Dans le répertoire `/srv/depts/marketing/share`, Alice a supprimer le fichier de bob sans faire attention. Heuresement Bob possédait le fichier dans son drive, cependant, ce genre
-  d'incident ne doit plus se produire, trouvez une solution pour permettre aux utilsiateurs dugroupe marketing qui travaillent sur le dossier share de supprimer leurs propres fichiers
-  mais pas ceux des autres. Tout en gardant les possibilité de lectures/ecritures/exécutions. 
+
+Dans le répertoire `/srv/depts/marketing/share`, Alice a supprimer le fichier de bob sans faire attention. Heuresement Bob possédait le fichier dans son drive, cependant, ce genre
+d'incident ne doit plus se produire, trouvez une solution pour permettre aux utilsiateurs dugroupe marketing qui travaillent sur le dossier share de supprimer leurs propres fichiers
+mais pas ceux des autres. Tout en gardant les possibilité de lectures/ecritures/exécutions. 
 
 **Symptômes :**
 
