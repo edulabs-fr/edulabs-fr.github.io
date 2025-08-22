@@ -30,17 +30,15 @@ nav_order: 1
 `nom d'utilisateur : root`
 `mot de passe : root`
 
-### Option B — Docker (image tout-en-un)
+### Option B — Podman/Docker (image tout-en-un)
 ```bash
-docker run -it --name lab-linux \
+docker run -it --name lab-linux-01 \
   --hostname Lab-scen1 \
-  --privileged \
-  -v lab_data:/srv \
-  ghcr.io/<votre-org>/<votre-image>:<tag>
+  ghcr.io/edulabsfr/Linuxlab01:1.0
 ```
 
-### Option C (Privé) — Cloud/Proxmox (VM) :
-Si vous souhaitez accéder aux labs directement depuis votre navigateur (pour une duée d'environ 1h), sans avoir à rien déployer, vous pouvez en faire la demande à l’adresse suivante : edulabs.svc@gmail.com
+### Option C — Browser Ready :
+Si vous souhaitez accéder aux labs directement depuis votre navigateur (pour une duée de 1h), sans avoir à rien déployer, vous pouvez en faire la demande à l’adresse suivante : edulabs.svc@gmail.com
 
 ---
 ## 🧪 Scénario du Lab
@@ -136,7 +134,7 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 - stop-incident04
 
 
-### INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont»
+### INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »
 
 **Contexte** : - Alice (groupe `marketing`) essaye de créer un fichier dans `/srv/depts/marketing/share` mais obtient « *Permission denied* ».
 

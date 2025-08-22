@@ -149,9 +149,9 @@ cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 
 ---
 
-## 🚨 Incidents
+## Incidents - Troubleshooting
 
-### 🔴 Incident INC-01 — Mauvaises permissions sur `/srv/depts/hr/share`
+### Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »
 
 **Ticket de alice.dupont :**
 - « Je suis dans le groupe `marketing` mais je ne peux pas écrire »
@@ -189,7 +189,7 @@ rm -f /srv/depts/marketing/share/test
 
 ---
 
-### 🔴 Incident INC-02 — Utilisateur absent du groupe
+### Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont »
 
   Dans le répertoire `/srv/depts/marketing/share`, Alice a supprimer le fichier de bob sans faire attention. Heuresement Bob possédait le fichier dans son drive, cependant, ce genre
   d'incident ne doit plus se produire, trouvez une solution pour permettre aux utilsiateurs dugroupe marketing qui travaillent sur le dossier share de supprimer leurs propres fichiers
@@ -199,33 +199,59 @@ rm -f /srv/depts/marketing/share/test
 
 # état du répertoire
 
+```bash
 `ls -ld /srv/depts/marketing/share`
+```
 Le dossier est bien group-writable (rwxrwx---) mais le sticky-bit est absent.
 
 Tout membre du groupe marketing peut supprimer n’importe quel fichier, même s’il n’en est pas propriétaire.
 
 **Diagnostic :**
-reproduire le problème :
-`sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice`
-`sudo -u alice.dupont rm /srv/depts/marketing/share/coucouAlice`
+
+Reproduire le problème :
+
+```bash
+# Création d’un fichier de test dans le dossier "share"
+# → exécuté en tant qu’utilisateur thomas.dru
+# → le fichier appartiendra à thomas.dru et au groupe marketing
+sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice
+
+# Tentative de suppression du fichier par un autre utilisateur (alice.dupont)
+# → si le sticky bit n’est PAS activé, la suppression sera possible
+# → si le sticky bit est activé, la suppression échouera (seul le propriétaire peut supprimer)
+sudo -u alice.dupont rm /srv/depts/marketing/share/coucouAlice
+```
+
 
 **Correctif :**
 
 - Réactiver le sticky-bit tout en conservant l’écriture groupe :
 
-`chmod +t /srv/depts/marketing/share`      
+```bash
+chmod +t /srv/depts/marketing/share  
+```
 
 Aucun changement supplémentaire n’est nécessaire ; les droits rwx du groupe restent intacts.
 
 **Vérification :**
-`sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice`
-`sudo -u alice.dupont rm /srv/depts/marketing/share/coucouAlice`
 
-`ls -ld /srv/depts/marketing/share` Le stickybit est bien affiché.
+```bash
+# Création d’un fichier de test dans le dossier "share" par thomas.dru
+sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice
+
+#Suppression du fichier par alice.dupont
+sudo -u alice.dupont rm /srv/depts/marketing/share/coucouAlice
+
+# Vérification des permissions du dossier "share"
+# → permet de voir si le sticky bit est présent (drwxrwsT ou drwxrws+t)
+# → sans sticky bit : les membres du groupe peuvent supprimer les fichiers des autres
+# → avec sticky bit : seuls les propriétaires peuvent supprimer leurs fichiers
+ls -ld /srv/depts/marketing/share`
+```
 
 ---
 
-### 🔴 Incident INC-03 — `passwd: Authentication token manipulation error`
+### Incident INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal »
 
 **Symptômes :**
 - Suite à une manipulation hasardeuse de ma part `camel.chalal` je n'arrive plus à changer mon mot de passe, j'ai une erreur `passwd: Authentication token manipulation error`.
@@ -254,4 +280,42 @@ chown root:root  /etc/passwd;  chmod 644 /etc/passwd
 ```bash
 ls -l /etc/shadow
 sudo -u camel.chalal passwd
+```
+
+### Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal »
+
+**Symptômes :**
+Votre collaborateur camel.chalal n'arrive pas à se connecter avec sa clé privé, le serveur semble ignorer l'authentification par clé et bascule en authentification par mot de passe.
+
+
+**Diagnostic :**
+1. Vérifier les permissions sur le répertoire /home/camel.chalal/.ssh et le fichier  /home/camel.chalal/.ssh/authorized_keys
+
+```bash
+#Attendu : drwx------ (0700) camel.chalal camel.chalal
+ls -ld /home/camel.chalal/.ssh
+
+#Attendu : -rw------- (0600) camel.chalal camel.chalal
+ls -ld /home/camel.chalal/.ssh/authorized_keys
+```
+Si les permissions sont plus ouvertes (ex : 0644 ou 0755), le démon SSH ignore le fichier pour des raisons de sécurité → d’où l’erreur de Sylvain.
+
+**Correctif :**
+```bash
+# Répertoire .ssh
+chown camel.chalal:camel.chalal /home/camel.chalal/.ssh
+chmod 0700 /home/camel.chalal/.ssh
+
+# Fichier authorized_keys
+chown camel.chalal:camel.chalal /home/camel.chalal/.ssh/authorized_keys
+chmod 0600 /home/camel.chalal/.ssh/authorized_keys
+```
+
+**Vérification :**
+```bash
+#Attendu : drwx------ (0700) camel.chalal camel.chalal
+ls -ld /home/camel.chalal/.ssh
+
+#Attendu : -rw------- (0600) camel.chalal camel.chalal
+ls -ld /home/camel.chalal/.ssh/authorized_keys
 ```
