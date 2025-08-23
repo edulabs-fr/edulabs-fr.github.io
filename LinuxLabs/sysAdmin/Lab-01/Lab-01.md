@@ -132,7 +132,7 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 - stop-incident04
 
 
-### <span style="color:red"> Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span>
+### <span style="color:red"> Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
 
 
 **Contexte** : - Alice (groupe `marketing`) essaye de créer un fichier dans `/srv/depts/marketing/share` mais obtient « *Permission denied* ».

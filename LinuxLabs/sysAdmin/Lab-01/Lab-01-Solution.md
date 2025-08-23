@@ -141,7 +141,7 @@ id -nG bob.martin
 #Vérifier que le répertoire Documents est bien présent dans le home de bob.martin
 ls -l /home/bob.martin | grep Documents
 
-#
+#Résultat attendu : alias ll='ls -alF'
 cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 ```
 
@@ -150,7 +150,7 @@ cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 
 ## Incidents - Troubleshooting
 
-### <span style="color:red">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span>
+### <span style="color:red">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
 
 **Ticket de alice.dupont :**
 - « Je suis dans le groupe `marketing` mais je ne peux pas écrire »
