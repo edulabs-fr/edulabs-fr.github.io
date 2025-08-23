@@ -43,7 +43,7 @@ main() {
   # Incidents (adaptés pour conteneur)
   write /opt/labs/bin/prepare_inc01.sh 0755 <<'SH'
 #!/usr/bin/env bash
-chmod 0750 /lab/depts/marketing/share
+chmod 0740 /lab/depts/marketing/share
 SH
 
   write /opt/labs/bin/fix_inc01.sh 0755 <<'SH'
