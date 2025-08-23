@@ -39,7 +39,11 @@ docker run -it --name lab-linux-01 \
 Si vous souhaitez accéder aux labs directement depuis votre navigateur (pour une duée de 1h), sans avoir à rien déployer, vous pouvez en faire la demande à l’adresse suivante : edulabs.svc@gmail.com
 
 ---
-## 🧪 Scénario du Lab
+
+
+# Spirnt 1
+
+## 📜 Scénario du Lab
 
 Vous rejoignez l’équipe IT d’une PME "Edulabs" qui compte environs 30 collaborateurs.  
 Les départements principaux sont : `marketing`, `dev`, `hr`, `ops`, plus un groupe transverse `com`.
@@ -66,11 +70,12 @@ vous pouvez restez avec le compte root. (chose à ne pas faire en production)
 Les incidents sont **déclenchés à la demande** via des commandes simples (voir plus bas).
 
 
-## Débuts des tickets Sprint 1 : 
+## 🏷️ Les tickets -  
 
 *Règle d’or : réaliser les tickets dans l’ordre.*
 
 ### Ticket 1 - Onboarding d’Alice Dupont
+
 Les tâches à faire :
 1. Créer un compte `alice.dupont` (avec son propre /home et un shell /bin/bash).
 2. Son groupe primaire doit être : marketing.
@@ -94,7 +99,7 @@ Résultat attendu : répertoire en 2770 ; lorsqu'un fichier est créé il hérit
 Astuces : `Le 2 active le setgid` `owner/groupe du dossier doivent être cohérents`.
 
 
-### Ticket 4 — Squelette & Bob Martin (Dev)
+<h3 style="color: red; font-weight: bold;">Ticket 4 — Squelette &amp; Bob Martin (Dev)</h3>
 
 Le squelette utilisateur doit être mis à jour pour correspondre aux conventions internes actuelles. 
 
@@ -113,7 +118,7 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 ---
 ---
 
-## Incidents - Troubleshooting 
+## 🚨 Incidents - Troubleshooting 🚨
 
 ### Initialisation : Les incidents sont déclenchés par des commandes très simples :
 
@@ -124,13 +129,11 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 - go-incident03   # ⚠️ bloque *tous* les `passwd` tant qu’actif
 - go-incident04
 
-
 **Correction**
 - stop-incident01
 - stop-incident02
 - stop-incident03
 - stop-incident04
-
 
 ### <span style="color:red"> Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
 
