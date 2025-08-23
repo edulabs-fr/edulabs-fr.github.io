@@ -142,6 +142,8 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 - Le fichier appartient bien au **groupe** `marketing`.
 - Les permissions finales du dossier sont `rwxrws---` (`2770`, owner `root:marketing`).
 
+Vous devez résoudre ce ticket pour passer au suivant.
+
 ### <span style="color:red"> Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont » </span>
 
 **Contexte** : 

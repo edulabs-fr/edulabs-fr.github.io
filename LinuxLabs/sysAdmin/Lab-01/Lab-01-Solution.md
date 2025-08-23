@@ -204,7 +204,7 @@ mais pas ceux des autres. Tout en gardant les possibilité de lectures/ecritures
 Afficher l'état du répertoire pour avoir une idée sur le problème.
 
 ```bash
-`ls -ld /srv/depts/marketing/share`
+ls -ld /srv/depts/marketing/share
 ```
 Le dossier est bien group-writable (rwxrwx---) mais le sticky-bit est absent.
 
@@ -223,18 +223,16 @@ sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice
 # Tentative de suppression du fichier par un autre utilisateur (alice.dupont)
 # → si le sticky bit n’est PAS activé, la suppression sera possible
 # → si le sticky bit est activé, la suppression échouera (seul le propriétaire peut supprimer)
-sudo -u alice.dupont rm /srv/depts/marketing/share/coucouAlice
+sudo -u alice.dupont rm -f /srv/depts/marketing/share/coucouAlice
 ```
 
 
 **Correctif :**
 
 - Réactiver le sticky-bit tout en conservant l’écriture groupe :
-
 ```bash
 chmod +t /srv/depts/marketing/share  
 ```
-
 Aucun changement supplémentaire n’est nécessaire ; les droits rwx du groupe restent intacts.
 
 **Vérification :**
@@ -244,13 +242,13 @@ Aucun changement supplémentaire n’est nécessaire ; les droits rwx du groupe 
 sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice
 
 #Suppression du fichier par alice.dupont
-sudo -u alice.dupont rm /srv/depts/marketing/share/coucouAlice
+sudo -u alice.dupont rm -f /srv/depts/marketing/share/coucouAlice
 
 # Vérification des permissions du dossier "share"
 # → permet de voir si le sticky bit est présent (drwxrwsT ou drwxrws+t)
 # → sans sticky bit : les membres du groupe peuvent supprimer les fichiers des autres
 # → avec sticky bit : seuls les propriétaires peuvent supprimer leurs fichiers
-ls -ld /srv/depts/marketing/share`
+ls -ld /srv/depts/marketing/share
 ```
 
 ---
