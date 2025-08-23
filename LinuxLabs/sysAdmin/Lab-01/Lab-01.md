@@ -166,6 +166,9 @@ Or, selon la politique interne, chaque membre du groupe `marketing` doit pouvoir
 
 ### <span style="color:red"> Incident INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal » </span>
 
+{: .important-title }
+> Ce lab ne fonctionnera pas si vous l'avez lancer en mode conteneur.
+
 **Contexte** : 
 
 - Suite à une manipulation hasardeuse de ma part, `camel.chalal` en travaillant avec les attribus et permissions, je n'arrive plus à changer mon mot de passe, j'ai une erreur `passwd: Authentication token manipulation error`.
