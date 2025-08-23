@@ -127,7 +127,6 @@ ls -ld /srv/depts/marketing/share
 # Squelette standard
 install -d -m 0755 /etc/skel/Documents
 echo "alias ll='ls -alF'" >> /etc/skel/.bashrc
-
 # Créer Bob (après maj du skel)
 useradd -m -d /home/bob.martin -s /bin/bash -g dev bob.martin
 echo "bob.martin:Password123!" | chpasswd
@@ -137,10 +136,8 @@ echo "bob.martin:Password123!" | chpasswd
 ```bash
 #Groupe primaire doit être dev
 id -nG bob.martin 
-
 #Vérifier que le répertoire Documents est bien présent dans le home de bob.martin
 ls -l /home/bob.martin | grep Documents
-
 #Résultat attendu : alias ll='ls -alF'
 cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 ```
@@ -150,7 +147,9 @@ cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 
 ## Incidents - Troubleshooting
 
-{: .note }
+{: .note } 
+Hello World 
+
 ### <span style="color:red">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
 
 **Ticket de alice.dupont :** « Je suis dans le groupe `marketing` mais je ne peux pas écrire »
@@ -160,18 +159,23 @@ cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 **Diagnostic :**
 
 On fait un test pour reproduire l'erreur :
-`sudo -u alice.dupont touch /srv/depts/marketing/share/test`
+```bash
+sudo -u alice.dupont touch /srv/depts/marketing/share/test
+```
 
-On à bien un problème de permission :
-`touch: cannot touch '/srv/depts/marketing/share/test': Permission denied`
+On à bien un problème de permission : `touch: cannot touch '/srv/depts/marketing/share/test': Permission denied`
 
 On vérifie les droits :
-`stat -c '%a %U:%G' /srv/depts/marketing/share`
+```bash
+stat -c '%a %U:%G' /srv/depts/marketing/share
+```
 
 **Correctif :**
 
 ```bash
+#Changement de propriétaire
 chown root:marketing /srv/depts/marketing/share
+#Changement de permissions
 chmod 2770 /srv/depts/marketing/share
 ```
 
