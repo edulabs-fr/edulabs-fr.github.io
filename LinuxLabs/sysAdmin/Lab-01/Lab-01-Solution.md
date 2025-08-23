@@ -178,8 +178,11 @@ chmod 2770 /srv/depts/marketing/share
 **Vérification :**
 
 ```bash
+#Création d'un fichier test dans le partage share avec l'utilisateur alice.dupont
 sudo -u alice.dupont touch /srv/depts/marketing/share/test
-stat -c '%G' /srv/depts/marketing/share/test   # → marketing
+#Doit retourner marketing
+stat -c '%G' /srv/depts/marketing/share/test 
+#Suppression du fichier test
 rm -f /srv/depts/marketing/share/test
 ```
 
@@ -253,29 +256,58 @@ ls -ld /srv/depts/marketing/share`
 **Symptômes :**
 - Suite à une manipulation hasardeuse de ma part `camel.chalal` je n'arrive plus à changer mon mot de passe, j'ai une erreur `passwd: Authentication token manipulation error`.
 
-mot de passe actuel : Motdepasse123!
+Mot de passe actuel : `Motdepasse123!`
 
 ```bash
+#On simule le changement de mot de passe depuis le compte root sur le compte camel.chalal
 sudo -u camel.chalal passwd
 ```
+On à une erreur de type `passwd: Authentication token manipulation error`
 
 **Diagnostic :**
-- Vérifier permissions de `/etc/shadow` :
+
 ```bash
+#On force le changement de mot de passe en passant par le compte root directement
+passwd camel.chalal
+```
+
+Echec, même en essayant de forcer le changement de mot de passe en utilisant le compte root, on n'arrive pas à changer le mot de passe de camel.chalal.
+
+- Vérifier permissions/attribus de `/etc/shadow` :
+
+```bash
+#Vérification des permissions
 ls -l /etc/shadow
 ```
-- Attendu : `-rw-r----- 1 root shadow ... /etc/shadow`
+
+#Résultats par défaut : -rw-r----- 1 root shadow ... /etc/shadow
+
+```bash
+#Vérification des attribus
+lsattr /etc/shadow
+```
+Résultat : `----i---------e------- /etc/shadow`
+
+Notre console retourne deux attribus `i` et `e` :
+
+`i` → immutable : le fichier ne peut pas être modifié, supprimé, renommé ou écrasé, même par root.
+
+`e` → extent format (lié au système de fichiers ext4, sans impact ici).
 
 **Correctif :**
+
+Retirer l'attribut d'immutabilité
+
 ```bash
 chattr -i /etc/shadow || true
-chown root:shadow /etc/shadow; chmod 640 /etc/shadow
-chown root:root  /etc/passwd;  chmod 644 /etc/passwd
 ```
 
 **Vérification :**
 ```bash
-ls -l /etc/shadow
+#Vérification des attribus à nouveau
+lsattr /etc/shadow
+
+#Tenter le changement de passe en simulant l'utilisateur camel.chalal
 sudo -u camel.chalal passwd
 ```
 ---
@@ -283,7 +315,7 @@ sudo -u camel.chalal passwd
 ### <span style="color:red"> Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal » </span>
 
 **Symptômes :**
-Votre collaborateur camel.chalal n'arrive pas à se connecter avec sa clé privé, le serveur semble ignorer l'authentification par clé et bascule en authentification par mot de passe.
+Votre collaborateur `camel.chalal` n'arrive pas à se connecter avec sa clé privé, le serveur semble ignorer l'authentification par clé et bascule en authentification par mot de passe.
 
 
 **Diagnostic :**

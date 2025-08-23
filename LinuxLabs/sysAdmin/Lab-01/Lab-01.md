@@ -163,15 +163,17 @@ Or, selon la politique interne, chaque membre du groupe `marketing` doit pouvoir
 
 **Contexte** : 
 
-Camel Chalal (groupe dev) tente de changer son mot de passe et obtient immédiatement l’erreur :
+- Suite à une manipulation hasardeuse de ma part, `camel.chalal` en travaillant avec les attribus et permissions, je n'arrive plus à changer mon mot de passe, j'ai une erreur `passwd: Authentication token manipulation error`.
 
 `passwd: Authentication token manipulation error`
 
 **Attendu** : 
 
-passwd `camel.chalal` fonctionne normalement, l'utilisateur pourra donc modifier son mot de passe sans problème.
+`passwd camel.chalal` fonctionne normalement, l'utilisateur pourra donc modifier son mot de passe sans problème.
 
-⚠️ Attention : tant que l’incident est actif, tous les passwd échouent.
+⚠️ Attention : tant que l’incident est actif, tous les passwd échouent. Aucun besoin de reboot la machine.
+
+Pistes à creuser : `/etc/passwd` `/etc/shadow`
 
 ### <span style="color:red"> Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal » </span>
 
