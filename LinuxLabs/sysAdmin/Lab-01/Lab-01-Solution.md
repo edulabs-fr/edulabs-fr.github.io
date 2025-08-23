@@ -88,7 +88,7 @@ En d'autres termes : Activer le setgid et droits d’équipe sur /srv/depts/mark
 #Vérifier les permissions et droits actuelles, le groupe share est en lecture uniquement
 ls -ld /srv/depts/marketing/share
 
-#Tester l'écriture avec un utilisateur faisant partie du groupe marketing
+#Tester l'écriture avec un utilisateur faisant partie du groupe marketing !
 sudo -u alice.dupont touch /srv/depts/marketing/share/testfile
 
 # Changer les propriétaire du répertoire share 
