@@ -50,7 +50,7 @@ Les départements principaux sont : `marketing`, `dev`, `hr`, `ops`, plus un gro
 
 Arborescence de référence :
 ```bash
-/srv/
+/lab/
 └── depts/
 ├── marketing/
 │ └── share/ (collaboration interne)
@@ -92,7 +92,7 @@ Astuces : ```groupadd``` ```usermod```
 
 ### Ticket 3 - Partage Marketing (setgid)
 
-1. Sur /srv/depts/marketing/share, activer setgid et les droits d’équipe.
+1. Sur /lab/depts/marketing/share, activer setgid et les droits d’équipe.
 
 Résultat attendu : répertoire en 2770 ; lorsqu'un fichier est créé il héritera des permissions du groupe marketing.
 
@@ -138,7 +138,7 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 ### <span style="color:red"> Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
 
 
-**Contexte** : - Alice (groupe `marketing`) essaye de créer un fichier dans `/srv/depts/marketing/share` mais obtient « *Permission denied* ».
+**Contexte** : - Alice (groupe `marketing`) essaye de créer un fichier dans `/lab/depts/marketing/share` mais obtient « *Permission denied* ».
 
 **Attendu** : 
 - Alice peut créer un fichier.
@@ -151,7 +151,7 @@ Vous devez résoudre ce ticket pour passer au suivant.
 
 **Contexte** : 
 
-Dans le répertoire partagé `/srv/depts/marketing/share`, Alice vient de supprimer par erreur un fichier appartenant à Bob (`rapport_bob.txt`).
+Dans le répertoire partagé `/lab/depts/marketing/share`, Alice vient de supprimer par erreur un fichier appartenant à Bob (`rapport_bob.txt`).
 
 Or, selon la politique interne, chaque membre du groupe `marketing` doit pouvoir **gérer ses propres fichiers uniquement**, mais ne doit pas avoir la possibilité de supprimer ceux des autres.
 

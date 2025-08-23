@@ -78,37 +78,37 @@ id -nG alice.dupont | grep com
 
 **Objectif**  
 
-- Attribuer au groupe Marketing les permissions de lecture, écriture et exécution sur le répertoire `/srv/depts/marketing/share`, avec validation de la procédure (test)
+- Attribuer au groupe Marketing les permissions de lecture, écriture et exécution sur le répertoire `/lab/depts/marketing/share`, avec validation de la procédure (test)
 
-En d'autres termes : Activer le setgid et droits d’équipe sur /srv/depts/marketing/share, avec héritage du groupe.
+En d'autres termes : Activer le setgid et droits d’équipe sur /lab/depts/marketing/share, avec héritage du groupe.
 
 ```bash
 #Vérifier les permissions et droits actuelles, le groupe share est en lecture uniquement
-ls -ld /srv/depts/marketing/share
+ls -ld /lab/depts/marketing/share
 
 #Tester l'écriture avec un utilisateur faisant partie du groupe marketing !
-sudo -u alice.dupont touch /srv/depts/marketing/share/testfile
+sudo -u alice.dupont touch /lab/depts/marketing/share/testfile
 
 # Changer les propriétaire du répertoire share 
-chown root:marketing /srv/depts/marketing/share
+chown root:marketing /lab/depts/marketing/share
 
 # Activer le setgid et modifier les droits d'équipe marketing
-chmod 2770 /srv/depts/marketing/share
+chmod 2770 /lab/depts/marketing/share
 ```
 
 **Vérification :**
 
 ```bash
 # Test d'héritage de groupe
-sudo -u alice.dupont touch /srv/depts/marketing/share/testfile
+sudo -u alice.dupont touch /lab/depts/marketing/share/testfile
 
 #Doit retourner : 2770 root:marketing
-stat -c '%a %U:%G' /srv/depts/marketing/share   
+stat -c '%a %U:%G' /lab/depts/marketing/share   
 #Doit retourner  ...alice.dupont:marketing
-stat -c '%n %U:%G' /srv/depts/marketing/share/testfile  
+stat -c '%n %U:%G' /lab/depts/marketing/share/testfile  
 
 #Résultat attendu : drwxrws--- 2 root marketing
-ls -ld /srv/depts/marketing/share
+ls -ld /lab/depts/marketing/share
 ```
 
 ---
@@ -160,34 +160,34 @@ Hello World
 
 On fait un test pour reproduire l'erreur :
 ```bash
-sudo -u alice.dupont touch /srv/depts/marketing/share/test
+sudo -u alice.dupont touch /lab/depts/marketing/share/test
 ```
 
-On à bien un problème de permission : `touch: cannot touch '/srv/depts/marketing/share/test': Permission denied`
+On à bien un problème de permission : `touch: cannot touch '/lab/depts/marketing/share/test': Permission denied`
 
 On vérifie les droits :
 ```bash
-stat -c '%a %U:%G' /srv/depts/marketing/share
+stat -c '%a %U:%G' /lab/depts/marketing/share
 ```
 
 **Correctif :**
 
 ```bash
 #Changement de propriétaire
-chown root:marketing /srv/depts/marketing/share
+chown root:marketing /lab/depts/marketing/share
 #Changement de permissions
-chmod 2770 /srv/depts/marketing/share
+chmod 2770 /lab/depts/marketing/share
 ```
 
 **Vérification :**
 
 ```bash
 #Création d'un fichier test dans le partage share avec l'utilisateur alice.dupont
-sudo -u alice.dupont touch /srv/depts/marketing/share/test
+sudo -u alice.dupont touch /lab/depts/marketing/share/test
 #Doit retourner marketing
-stat -c '%G' /srv/depts/marketing/share/test 
+stat -c '%G' /lab/depts/marketing/share/test 
 #Suppression du fichier test
-rm -f /srv/depts/marketing/share/test
+rm -f /lab/depts/marketing/share/test
 ```
 
 ---
@@ -195,7 +195,7 @@ rm -f /srv/depts/marketing/share/test
 ### <span style="color:red"> Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont » </span>
 
 
-Dans le répertoire `/srv/depts/marketing/share`, Alice a supprimer le fichier de bob sans faire attention. Heuresement Bob possédait le fichier dans son drive, cependant, ce genre
+Dans le répertoire `/lab/depts/marketing/share`, Alice a supprimer le fichier de bob sans faire attention. Heuresement Bob possédait le fichier dans son drive, cependant, ce genre
 d'incident ne doit plus se produire, trouvez une solution pour permettre aux utilsiateurs dugroupe marketing qui travaillent sur le dossier share de supprimer leurs propres fichiers
 mais pas ceux des autres. Tout en gardant les possibilité de lectures/ecritures/exécutions. 
 
@@ -204,7 +204,7 @@ mais pas ceux des autres. Tout en gardant les possibilité de lectures/ecritures
 Afficher l'état du répertoire pour avoir une idée sur le problème.
 
 ```bash
-ls -ld /srv/depts/marketing/share
+ls -ld /lab/depts/marketing/share
 ```
 Le dossier est bien group-writable (rwxrwx---) mais le sticky-bit est absent.
 
@@ -218,12 +218,12 @@ Reproduire le problème :
 # Création d’un fichier de test dans le dossier "share"
 # → exécuté en tant qu’utilisateur thomas.dru
 # → le fichier appartiendra à thomas.dru et au groupe marketing
-sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice
+sudo -u thomas.dru touch /lab/depts/marketing/share/coucouAlice
 
 # Tentative de suppression du fichier par un autre utilisateur (alice.dupont)
 # → si le sticky bit n’est PAS activé, la suppression sera possible
 # → si le sticky bit est activé, la suppression échouera (seul le propriétaire peut supprimer)
-sudo -u alice.dupont rm -f /srv/depts/marketing/share/coucouAlice
+sudo -u alice.dupont rm -f /lab/depts/marketing/share/coucouAlice
 ```
 
 
@@ -231,7 +231,7 @@ sudo -u alice.dupont rm -f /srv/depts/marketing/share/coucouAlice
 
 - Réactiver le sticky-bit tout en conservant l’écriture groupe :
 ```bash
-chmod +t /srv/depts/marketing/share  
+chmod +t /lab/depts/marketing/share  
 ```
 Aucun changement supplémentaire n’est nécessaire ; les droits rwx du groupe restent intacts.
 
@@ -239,16 +239,16 @@ Aucun changement supplémentaire n’est nécessaire ; les droits rwx du groupe 
 
 ```bash
 # Création d’un fichier de test dans le dossier "share" par thomas.dru
-sudo -u thomas.dru touch /srv/depts/marketing/share/coucouAlice
+sudo -u thomas.dru touch /lab/depts/marketing/share/coucouAlice
 
 #Suppression du fichier par alice.dupont
-sudo -u alice.dupont rm -f /srv/depts/marketing/share/coucouAlice
+sudo -u alice.dupont rm -f /lab/depts/marketing/share/coucouAlice
 
 # Vérification des permissions du dossier "share"
 # → permet de voir si le sticky bit est présent (drwxrwsT ou drwxrws+t)
 # → sans sticky bit : les membres du groupe peuvent supprimer les fichiers des autres
 # → avec sticky bit : seuls les propriétaires peuvent supprimer leurs fichiers
-ls -ld /srv/depts/marketing/share
+ls -ld /lab/depts/marketing/share
 ```
 
 ---
