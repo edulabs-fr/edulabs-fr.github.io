@@ -74,7 +74,8 @@ Les incidents sont **déclenchés à la demande** via des commandes simples (voi
 
 *Règle d’or : réaliser les tickets dans l’ordre.*
 
-### Ticket 1 - Onboarding d’Alice Dupont
+
+<h3 style="color: red; font-weight: bold;">Ticket 1 - Onboarding d’Alice Dupont </h3>
 
 Les tâches à faire :
 1. Créer un compte `alice.dupont` (avec son propre /home et un shell /bin/bash).
@@ -83,14 +84,15 @@ Les tâches à faire :
 
 Astuces : ```useradd``` ```usermod``` ```passwd``` ```chage```
 
-### Ticket 2 - Groupe transverse com
+<h3 style="color: red; font-weight: bold;">Ticket 2 - Groupe transverse com </h3>
 
 1. Vérifier ou créer le groupe `com`.
 2. Ajouter alice.dupont au groupe `com`, ce groupe doit être son groupe secondiare.
 
 Astuces : ```groupadd``` ```usermod```
 
-### Ticket 3 - Partage Marketing (setgid)
+
+<h3 style="color: red; font-weight: bold;">Ticket 3 - Partage Marketing (setgid) (Dev)</h3>
 
 1. Sur /lab/depts/marketing/share, activer setgid et les droits d’équipe.
 

@@ -121,7 +121,7 @@ SH
 set -euo pipefail
 u=camel.chalal
 id "$u" &>/dev/null || {
-  useradd -m -d /home/"$u" -s /bin/bash -g dev "$u"
+  useradd -m -d /home/"$u" -s /bin/bash "$u"
   echo "$u:Motdepasse123!" | chpasswd
 }
 useradd -m -d /home/sylvain.morel -s /bin/bash sylvain.morel

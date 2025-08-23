@@ -344,7 +344,7 @@ chown camel.chalal:camel.chalal /home/camel.chalal/.ssh
 chmod 0700 /home/camel.chalal/.ssh
 
 # Fichier authorized_keys
-chown camel.chalal:camel.chalal /home/camel.chalal/.ssh/authorized_keys
+chown camel.chalal /home/camel.chalal/.ssh/authorized_keys
 chmod 0600 /home/camel.chalal/.ssh/authorized_keys
 ```
 
