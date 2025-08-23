@@ -113,7 +113,7 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 ---
 ---
 
-# Troubleshooting incidents 
+## Incidents - Troubleshooting 
 
 ### Initialisation : Les incidents sont déclenchés par des commandes très simples :
 

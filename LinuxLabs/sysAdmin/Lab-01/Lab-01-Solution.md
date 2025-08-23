@@ -13,7 +13,7 @@ Cette page contient les corrections détaillées des tickets et incidents du Spr
 
 ## Tickets
 
-### Ticket T1 — Création de l’utilisateur `alice.dupont`
+### Ticket T1 — Onboarding d’Alice Dupont
 
 **Objectif**  
 - Créer `alice.dupont`
@@ -49,7 +49,7 @@ chage -l alice.dupont
 
 ---
 
-### Ticket T2 — Ajout d’un utilisateur secondaire
+### Ticket T2 — Groupe transverse com
 
 **Objectif**  
 
@@ -60,10 +60,8 @@ chage -l alice.dupont
 ```bash
 #Vérifier si le groupe com est existant
 getent group com
-
 #Créer le groupe com
 groupadd -f com
-
 #Ajouter alice.dupont au groupe com (en tant que groupe secondaire)
 usermod -aG com alice.dupont
 ```
@@ -76,7 +74,7 @@ id -nG alice.dupont | grep com
 
 ---
 
-### Ticket T3 — Droits sur `/srv/depts/marketing/share`
+### Ticket T3 — Partage Marketing (setgid)
 
 **Objectif**  
 
@@ -104,17 +102,18 @@ chmod 2770 /srv/depts/marketing/share
 # Test d'héritage de groupe
 sudo -u alice.dupont touch /srv/depts/marketing/share/testfile
 
-stat -c '%a %U:%G' /srv/depts/marketing/share   # → 2770 root:marketing
-stat -c '%n %U:%G' /srv/depts/marketing/share/testfile  # → ... : marketing
+#Doit retourner : 2770 root:marketing
+stat -c '%a %U:%G' /srv/depts/marketing/share   
+#Doit retourner  ...alice.dupont:marketing
+stat -c '%n %U:%G' /srv/depts/marketing/share/testfile  
 
+#Résultat attendu : drwxrws--- 2 root marketing
 ls -ld /srv/depts/marketing/share
 ```
 
-(doit montrer `drwxrws--- root marketing`)
-
 ---
 
-### Ticket T4 — Groupe projet `siteweb`
+### Ticket T4 — Squelette & Bob Martin (Dev)
 
 **Objectif**  
 
