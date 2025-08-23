@@ -38,7 +38,7 @@ passwd -e alice.dupont
 id alice.dupont   
 
 #Vérifier que Alice à bien /bin/bash comme shell
-getent passwd alice.dupont | grep ':/bin/bash$'
+getent passwd alice.dupont | grep ':/bin/bash'
 
 # Vérifier que Alice possède bien son /home
 ls -l /home/ 
@@ -322,13 +322,18 @@ Votre collaborateur `camel.chalal` n'arrive pas à se connecter avec sa clé pri
 1. Vérifier les permissions sur le répertoire /home/camel.chalal/.ssh et le fichier  /home/camel.chalal/.ssh/authorized_keys
 
 ```bash
-#Attendu : drwx------ (0700) camel.chalal camel.chalal
+# Le répertoire .ssh doit avoir les permissions : drwx------ (0700)
+# Propriétaire et groupe : camel.chalal
 ls -ld /home/camel.chalal/.ssh
 
-#Attendu : -rw------- (0600) camel.chalal camel.chalal
+# Le fichier authorized_keys doit avoir les permissions : -rw------- (0600)
+# Propriétaire et groupe : camel.chalal
 ls -ld /home/camel.chalal/.ssh/authorized_keys
 ```
-Si les permissions sont plus ouvertes (ex : 0644 ou 0755), le démon SSH ignore le fichier pour des raisons de sécurité → d’où l’erreur de Sylvain.
+
+Si les permissions sont trop permissives (ex : 0644 ou 0755), le serveur SSH ignore la clé pour des raisons de sécurité, ce qui explique le basculement vers l’authentification par mot de passe.
+
+Dans ce cas précis, bien que les fichiers soient situés dans le répertoire de camel.chalal, ils appartiennent à sylvain.morel (la personne qui les a créés). Ce mauvais paramétrage des droits d’accès est conforme au comportement attendu du serveur SSH, qui refuse toute clé dont les permissions sont incorrectes ou trop ouvertes.
 
 **Correctif :**
 ```bash
