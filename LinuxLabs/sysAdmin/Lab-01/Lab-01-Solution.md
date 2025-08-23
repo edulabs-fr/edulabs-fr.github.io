@@ -150,6 +150,7 @@ cat /home/bob.martin/.bashrc | grep "alias ll='ls -alF'"
 
 ## Incidents - Troubleshooting
 
+{: .note }
 ### <span style="color:red">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
 
 **Ticket de alice.dupont :** « Je suis dans le groupe `marketing` mais je ne peux pas écrire »
