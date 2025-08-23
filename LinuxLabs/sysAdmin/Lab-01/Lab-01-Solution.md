@@ -13,7 +13,7 @@ Cette page contient les corrections détaillées des tickets et incidents du Spr
 
 ## Tickets
 
-### Ticket T1 — Onboarding d’Alice Dupont
+<h3 style="color: red; font-weight: bold;">Ticket 1 - Onboarding d’Alice Dupont </h3>
 
 **Objectif**  
 - Créer `alice.dupont`
@@ -49,7 +49,7 @@ chage -l alice.dupont
 
 ---
 
-### Ticket T2 — Groupe transverse com
+<h3 style="color: red; font-weight: bold;">Ticket 2 - Groupe transverse com </h3>
 
 **Objectif**  
 
@@ -74,7 +74,7 @@ id -nG alice.dupont | grep com
 
 ---
 
-### Ticket T3 — Partage Marketing (setgid)
+<h3 style="color: red; font-weight: bold;">Ticket 3 - Partage Marketing (setgid) (Dev)</h3>
 
 **Objectif**  
 
@@ -113,7 +113,7 @@ ls -ld /lab/depts/marketing/share
 
 ---
 
-### Ticket T4 — Squelette & Bob Martin (Dev)
+<h3 style="color: red; font-weight: bold;">Ticket 4 — Squelette &amp; Bob Martin (Dev)</h3>
 
 **Objectif**  
 
