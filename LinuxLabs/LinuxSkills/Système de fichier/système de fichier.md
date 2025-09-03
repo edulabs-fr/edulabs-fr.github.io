@@ -1,6 +1,6 @@
 ---
-title: sysAdmin
-parent: LinuxLabs
+title: Système de fichier
+parent: LinuxSkills
 nav_order: 1
 ---
 

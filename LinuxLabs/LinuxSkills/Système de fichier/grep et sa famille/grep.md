@@ -1,7 +1,7 @@
 ---
-title: Lab-02
-parent: sysAdmin
-grand_parent: LinuxLabs
+title: grep
+parent: Système de fichier
+grand_parent: LinuxSkills
 nav_order: 5
 ---
 

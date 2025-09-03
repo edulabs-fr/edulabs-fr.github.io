@@ -1,6 +1,6 @@
 ---
 title: Lab-01
-parent: sysAdmin
+parent: Scénarios
 grand_parent: LinuxLabs
 nav_order: 1
 ---
@@ -30,9 +30,12 @@ nav_order: 1
 
 ### Option B — Podman/Docker (image tout-en-un)
 ```bash
-docker run -it --name lab-linux-01 \
-  --hostname Lab-scen1 \
-  ghcr.io/edulabsfr/Linuxlab01:1.0
+docker pull docker.io/edulabsfr/edulabs-lab01:1.0
+docker run -it --name lab-linux-sprint-01 \
+  --hostname sprint01 \
+  docker.io/library/debian:12 \
+  bash
+
 ```
 
 ### Option C — Browser Ready :

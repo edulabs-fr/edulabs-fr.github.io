@@ -1,6 +1,6 @@
 ---
 title: Lab-01-Solution
-parent: sysAdmin
+parent: Scénarios
 grand_parent: LinuxLabs
 nav_order: 2
 ---
