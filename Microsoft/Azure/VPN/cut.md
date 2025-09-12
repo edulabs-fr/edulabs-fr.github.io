@@ -99,7 +99,43 @@ Voici ses principales fonctionnalités :
 - Connexion point-à-site : offrir aux utilisateurs distants (télétravail, mobilité) un accès sécurisé aux ressources Azure.
 - Intégration avec ExpressRoute : combiner un circuit dédié privé avec une passerelle VPN pour plus de flexibilité et de sécurité.
 - Scalabilité : adapter automatiquement la capacité en fonction des besoins réseau de l’organisation.
-- Redondance : supporter des configurations actives-actives ou actives-passives pour garantir une connectivité fiable et continue.
+- Redondance : supporter des configurations actives-actives ou actives-passives pour garantir une connectivité fiable, hautement disponible.
 - Compatibilité multi-protocoles : prise en charge d’IKEv1, IKEv2 et OpenVPN pour s’adapter à différents environnements et appareils.
 - Sécurité avancée : chiffrement robuste et mécanismes d’authentification pour protéger les données sensibles.
 - Déploiement multi-régions : possibilité de déployer des passerelles dans plusieurs régions Azure afin d’améliorer les performances, de renforcer la résilience et de mettre en place des architectures géo-redondantes.
+
+
+### **Types de connectivité**
+Comme nous l’avons évoqué précédemment, Azure VPN prend en charge deux principaux types de connexions. Chacune répond à des besoins spécifiques :
+
+**1. Site-to-Site VPN**
+Le Site-to-Site VPN permet de connecter un réseau local (on-premises) à un réseau virtuel Azure.
+Il s’agit d’une connexion IPSec/IKE qui assure une communication chiffrée et sécurisée entre les deux réseaux.
+
+La connexion s’établit entre une passerelle VPN Azure et un périphérique VPN compatible situé dans le réseau local.
+Ce type de VPN est particulièrement adapté lorsqu’il faut maintenir une connexion permanente entre plusieurs sites (locaux ou cloud) afin que tous les appareils puissent échanger des ressources en continu.
+
+En résumé, le Site-to-Site VPN est la solution idéale pour interconnecter deux réseaux entiers de manière fiable, redondante et performante.
+
+**2. Point-to-Site VPN (P2S)**
+Le Point-to-Site VPN permet à un appareil individuel (ordinateur portable, poste de travail, etc.) de se connecter directement à un réseau virtuel Azure.
+
+- Il repose sur des protocoles sécurisés comme SSL, IKEv2 ou OpenVPN.
+- Il est conçu pour les utilisateurs distants qui ont besoin d’accéder aux applications et services hébergés dans Azure depuis n’importe où.
+- Contrairement au Site-to-Site, la connexion se fait au niveau du poste utilisateur et non via un équipement réseau.
+
+Ce type de VPN est particulièrement utile pour :
+
+- Les équipes en télétravail,
+- les développeurs,
+- les freelances ou collaborateurs nomades.
+
+Le P2S allie flexibilité et sécurité.
+
+Pour faciliter l’usage du Point-to-Site, Microsoft met à disposition l’Azure VPN Client. Cette application permet aux utilisateurs de se connecter facilement et en toute sécurité aux réseaux virtuels Azure.
+
+Ses principales caractéristiques sont :
+- Sécurité renforcée : prise en charge de protocoles tels qu’OpenVPN, IKEv2 et SSTP.
+- Intégration native avec Azure : connexion directe aux VNets pour accéder aux ressources cloud en privé.
+- Authentification flexible : support des certificats et d’Entra ID.
+- Multiplateforme : disponible sur Windows, macOS et d’autres systèmes, pour connecter un large éventail de terminaux.
