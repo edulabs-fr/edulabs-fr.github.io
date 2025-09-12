@@ -44,7 +44,7 @@ Si vous souhaitez accéder aux labs directement depuis votre navigateur (pour un
 ---
 
 
-# Spirnt 1
+# Sprint 1
 
 ## 📜 Scénario du Lab
 
@@ -140,7 +140,8 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 - stop-incident03
 - stop-incident04
 
-### <span style="color:red"> Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</span> {: .fw-300 }
+
+<h3 style="color: red; font-weight: bold;">Incident INC-01 — « Je suis dans le groupe mais je ne peux pas écrire - alice.dupont »</h3>
 
 
 **Contexte** : - Alice (groupe `marketing`) essaye de créer un fichier dans `/lab/depts/marketing/share` mais obtient « *Permission denied* ».
@@ -152,7 +153,7 @@ L’ordre des opérations est important : le squelette doit être prêt avant to
 
 Vous devez résoudre ce ticket pour passer au suivant.
 
-### <span style="color:red"> Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont » </span>
+<h3 style="color: red; font-weight: bold;">Incident INC-02 — « Oups, j'ai supprimé par erreur le fichier d'un collègue - alice.dupont »</h3>
 
 **Contexte** : 
 
@@ -169,7 +170,8 @@ Or, selon la politique interne, chaque membre du groupe `marketing` doit pouvoir
 **Attendu** : Seuls les propriétaires peuvent supprimer leur propres fichiers (le root aussi, et ce n'est pas un piège).
 
 
-### <span style="color:red"> Incident INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal » </span>
+<h3 style="color: red; font-weight: bold;">Incident INC-03 — « Je n'arrive plus à changer mon mot de passe : Authentication token manipulation error - camel.chalal » </h3>
+
 
 {: .important-title }
 > Ce lab ne fonctionnera pas si vous l'avez lancer en mode conteneur.
@@ -188,7 +190,8 @@ Or, selon la politique interne, chaque membre du groupe `marketing` doit pouvoir
 
 Pistes à creuser : `/etc/passwd` `/etc/shadow`
 
-### <span style="color:red"> Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal » </span>
+<h3 style="color: red; font-weight: bold;">Incident INC-04 — « Je n'arrive pas à me connecter en ssh avec la nouvelle clé  - camel.chalal »</h3>
+
 
 **Contexte** : 
 
