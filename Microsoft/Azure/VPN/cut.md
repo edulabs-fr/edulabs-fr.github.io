@@ -6,7 +6,7 @@ nav_order: 2
 ---
 
 
-### Introduction
+### **Introduction**
 Azure VPN est un service proposé par Microsoft Azure qui permet de relier en toute sécurité un réseau (site-to-site) ou un appareil individuel (point-to-site) à un réseau virtuel (VNet) hébergé dans le cloud Azure. Le tout via une connexion chiffrée transitant par Internet.
 
 Ainsi, les utilisateurs peuvent accéder aux ressources Azure comme s’ils étaient directement connectés à leur réseau local.
@@ -20,10 +20,10 @@ Imaginons un scénario :
 Azure VPN est donc la solution idéale pour allier souplesse et sécurité, en connectant vos équipes où qu’elles se trouvent.
 
 
-![alt text](<67a5de2e7379a743adeef241_azure vpn gateway.png>)
+![alt text](<67a5de2e7379a743adeef241_azure vpn gateway-1.png>)
 
 
-### Qu’est-ce qu’un VPN et une passerelle VPN ?
+### **Qu’est-ce qu’un VPN et une passerelle VPN ?**
 
 Un VPN (Virtual Private Network ou réseau privé virtuel) est une technologie qui permet de créer une connexion sécurisée et chiffrée entre un appareil et un autre, elle peut être de type Peer-To-Peer (comme wireguard) ou Client-To-Server (comme OpenVPN).
 
