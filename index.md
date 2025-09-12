@@ -6,9 +6,9 @@ nav_order: 1
 
 # Bienvenue
 
-Je m'appelle **Lotfi Hamadene** et je suis le fondateur de **Edulabs**, une plateforme francophone où le **partage** est au cœur de tout.  
+Je m'appelle **Lotfi Hamadene** et je suis la personne derrière l'initiative **Edulabs**, une plateforme francophone où le partage et la pratique est au kernel de tout.  
 
-Notre objectif : permettre aux apprenants quelque soit leur niveau de **découvrir, comprendre et pratiquer** les technologies dans un contexte réaliste et immersif.  
+L'objectif d'Edulabs : permettre aux apprenants quelque soit leur niveau de **découvrir, comprendre et pratiquer** les technologies dans un contexte réaliste et immersif.  
 
 ## Notre vision 
 Edulabs n’est pas seulement une plateforme d'apprentissage classique :
@@ -19,14 +19,13 @@ C’est un **espace stimulant** où l’apprentissage se veut :
 - **Scénarisé** : chaque exercice raconte une histoire, afin de rendre la pratique **plus engageante et mémorable**.  
 
 ## Ce que vous trouverez
-- Des **labs pratiques** autour de Linux, Azure, Kubernetes, Podman, Incus et d’autres technologies Cloud & DevOps.  
+- Des **labs pratiques** autour de Linux, Azure, Kubernetes, Podman, Incus et d’autres technologies Cloud & DevOps & Devsecops.  
 - Des **astuces** pour mieux exploiter vos environnements de travail et vos outils quotidiens.  
 - Des **parcours pédagogiques** qui vous accompagnent pas à pas dans votre montée en compétences orientée pratique.  
 
-
 ## Pourquoi Edulabs ?
 
-Lors de mon propre parcours en informatique, j’ai été confronté à une réalité frustrante, aussi bien en école qu’en autodidacte sur des plateformes reconnues.  
+Lors de mon propre parcours en informatique, j’ai été confronté à une réalité frustrante, aussi bien en école qu’en autodidacte sur des plateformes payantes et reconnues.  
 
 Les labs proposés étaient souvent :  
 - **Trop simplistes** : par exemple, déployer un serveur DHCP ou DNS..., OK ce sont des notions utiles à comprendre certes, mais ce n’est pas ce que fait de vous un administrateur système au quotidien. 
