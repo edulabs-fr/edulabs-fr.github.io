@@ -1,7 +1,7 @@
 ---
-title: J'utilise les attribus dès que je peux !
-parent: Astuces
-grand_parent: Linux
+title: J'utilise les attributs dès que je peux !
+parent: Sécurité
+grand_parent: Astuces
 nav_order: 1
 ---
 

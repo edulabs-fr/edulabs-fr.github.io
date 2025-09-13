@@ -1,5 +1,5 @@
 ---
-title: Lab-01
+title: Sécurités
 parent: Astuces
 grand_parent: Linux
 nav_order: 1

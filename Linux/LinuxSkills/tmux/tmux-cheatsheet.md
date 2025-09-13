@@ -1,5 +1,5 @@
 ---
-title: cut
+title: Tmux - Cheatsheet
 parent: LinuxSkills
 grand_parent: Linux
 nav_order: 2
