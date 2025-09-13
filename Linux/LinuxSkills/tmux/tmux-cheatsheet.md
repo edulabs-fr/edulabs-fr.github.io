@@ -23,7 +23,7 @@ La bonne nouvelle ? Avec quelques lignes bien placées dans votre configuratio
 
 On édite le fichier ```~/.tmux.conf``` et on ajoute :
 
-``` Bash
+```bash
 # Activer la souris (scroll, sélection, redimensionnement)
 set -g mouse on
 
@@ -97,4 +97,30 @@ Ensuite `tmux kill-server` et relancez tmux
 - `Ctrl + b`, puis `Ctrl + s` pour *sauvegarder*
 - `Ctrl + b`, puis `Ctrl + r` pour *restaurer*
 
+
+### Sessions Tmux
+- Ouvrir une nouvelle session  `tmux new -s nom_session`
+- Détacher une session (quitter sans fermer) `Ctrl + b`, puis `d`
+- Lister les sessions `tmux list-sessions` ou `tmux ls`
+- Rejoindre une session existante  `tmux attach -t nom_session`
+- Changer de session  `tmux switch -t nom_session`
+- Supprimer une session  `tmux kill-session -t nom_session`
+- Supprimer toutes les sessions sauf celle en cours  `tmux kill-session -a`
+
+
+### Fenêtres & Splits
+- Créer une nouvelle fenêtre `Ctrl + b`, puis `c`
+- Lister les fenêtres `Ctrl + b`, puis `w`
+- Naviguer entre les fenêtres `Ctrl + b`, puis `n` (suivante) / `p` (précédente)
+- Se déplacer vers une fenêtre spécifique `Ctrl + b`, puis `numéro_fenêtre`
+- Fermer la fenêtre `Ctrl + b`, puis `&`
+- Renommer la fenêtre `Ctrl + b`, puis `&`
+
+
+### Panes (diviser l’écran)
+- Split horizontal `Ctrl + b`, puis `%`
+- Split vertical `Ctrl + b`, puis `"`
+- Fermer un split `Ctrl + b`, puis `x` (et confirmer)
+- Naviguer entre les splits `Ctrl + b`, puis `←` `→` `↑` `↓`
+- Pour afficher un pane en plein écran `Ctrl + b`, puis `z`
 
