@@ -38,7 +38,7 @@ J’ai aussi remarqué que beaucoup de stagiaires et d’apprenants francophones
 C’est de là qu’est née l’idée d’**Edulabs** :  
 - Une plateforme **francophone**,  
 - **Gratuite au maximum**,  
-- Pensée pour celles et ceux qui veulent **progresser par la pratique réaliste**.  
+- Pensée pour celles et ceux qui veulent **progresser par la pratique et d'une façon plus au moins réaliste**.  
 
 Parce que, soyons honnêtes : peu importe les heures de théorie ou de “tryhard” que vous investissez, sans **mise en pratique concrète**, il restera toujours ce manque de confiance en vous — que ce soit lors d’un entretien ou face aux défis d’un nouveau poste.  
 

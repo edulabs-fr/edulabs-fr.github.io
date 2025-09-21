@@ -1,6 +1,7 @@
 ---
-title: LinuxLabs
+title: Certifications AZ-104
 nav_order: 2
+parent: Microsoft
 has_children: true
 ---
 

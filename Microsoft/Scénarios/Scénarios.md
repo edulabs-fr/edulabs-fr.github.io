@@ -1,9 +1,9 @@
 ---
 title: Scénarios
-parent: LinuxLabs
-nav_order: 1
+parent: Microsoft
+nav_order: 
 ---
 
-# Lab Linux — Scénario
+# Lab Microsoft — Scénario
 
 ## Présentation de la section en cours de rédaction.
