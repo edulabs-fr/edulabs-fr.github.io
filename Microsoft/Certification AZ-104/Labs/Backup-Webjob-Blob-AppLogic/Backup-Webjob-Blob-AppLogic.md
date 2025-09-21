@@ -1,8 +1,8 @@
 ---
-title: La théorie
-parent: VPN
-grand_parent: Azure
-nav_order: 2
+title: Backup-Webjob-Blob-AppLogic
+parent: Labs
+grand_parent: Certification AZ-104
+nav_order: 1
 ---
 
 

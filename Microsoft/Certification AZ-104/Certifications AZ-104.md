@@ -1,10 +1,10 @@
 ---
-title: Certifications AZ-104
+title: Certification AZ-104
 nav_order: 2
 parent: Microsoft
 has_children: true
 ---
 
-# LinuxLabs - 
+# Bienvenu dans la section AZ-104 - 
 
-Bienvenue dans la section LinuxLabs.
+Içi vous trouverez toutes les ressources concernant la certification Microsoft AZ-104.
