@@ -4,6 +4,6 @@ parent: Microsoft
 nav_order: 
 ---
 
-# Lab Microsoft — Scénario
+# Lab Microsoft — Scénarios
 
 ## Présentation de la section en cours de rédaction.

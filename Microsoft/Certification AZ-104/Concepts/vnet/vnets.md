@@ -1,7 +1,7 @@
 ---
 title: VNets
 parent: Concepts
-grand_parent: Certifications AZ-104
+grand_parent: Certification AZ-104
 nav_order: 1
 ---
 
