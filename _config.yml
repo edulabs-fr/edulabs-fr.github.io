@@ -29,3 +29,4 @@ gh_edit_view_mode: "tree"
 color_scheme: light
 
 footer_content: '© 2025 Edulabs. Distribué sous <a href="https://github.com/edulabs-fr/edulabs-fr.github.io/blob/main/LICENSE">MIT License</a>.'
+footer_content_license: ""  # évite que la licence s’affiche
