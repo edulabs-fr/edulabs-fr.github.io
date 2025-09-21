@@ -42,6 +42,6 @@ C’est de là qu’est née l’idée d’**Edulabs** :
 
 Parce que, soyons honnêtes : peu importe les heures de théorie ou de “tryhard” que vous investissez, sans **mise en pratique concrète**, il restera toujours ce manque de confiance en vous — que ce soit lors d’un entretien ou face aux défis d’un nouveau poste.  
 
-👉 **Edulabs est là pour combler ce vide** : vous donner des scénarios réalistes, guidés mais pas trop, pour renforcer vos compétences **et surtout votre confiance en vous**.  
+👉 **Edulabs est là pour apporter une brique dans le but de combler ce vide** : vous donner des scénarios réalistes, guidés mais pas trop, pour renforcer vos compétences **et surtout votre confiance en vous**.  
 
 > “Apprendre, c’est faire. Et faire, c’est comprendre.”  
